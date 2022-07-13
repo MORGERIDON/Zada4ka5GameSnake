@@ -1,8 +1,10 @@
 package com.morgeridon.objects;
 
+import static com.morgeridon.SnakeGameMain.*;
+
 public class Snake {
     public int length = 2;
-    public int direction = 0;
+    public int direction = 3;
 
     public int sX[] = new int[300];
     public int sY[] = new int[300];
@@ -38,6 +40,11 @@ public class Snake {
                 sX[0]--;
                 break;
         }
+        if (sY[0] > HEIGHT - 1) sY[0] = 0;
+        if (sY[0] < 0) sY[0] = HEIGHT - 1;
+
+        if (sX[0] > WIDTH - 1) sX[0] = 0;
+        if (sX[0] < 0) sX[0] = WIDTH - 1;
 
     }
 }
